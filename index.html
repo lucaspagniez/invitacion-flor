@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mis XV | Flor</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Música de fondo -->
+    <audio id="musicaFondo" loop preload="none">
+        <source src="assets/audio/beat-it.mp3" type="audio/mpeg">
+        Tu navegador no permite reproducir audio.
+    </audio>
+
+    <!-- Pantalla para elegir música -->
+    <section class="pantalla-musica" id="pantallaMusica">
+
+        <div class="musica-contenido">
+            <p class="texto-superior">MIS XV AÑOS</p>
+
+            <h1>Flor</h1>
+
+            <div class="separador-floral" aria-hidden="true">✦</div>
+
+            <p class="pregunta-musica">
+                ¿Deseás ingresar con música?
+            </p>
+
+            <div class="opciones-musica">
+                <button class="btn-musica btn-si-musica" id="btnConMusica" type="button">
+                    Sí, con música
+                </button>
+
+                <button class="btn-musica btn-no-musica" id="btnSinMusica" type="button">
+                    No, gracias
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Portada -->
+    <main class="portada" id="portada">
+
+        <div class="portada-contenido">
+
+            <p class="texto-superior">MIS XV AÑOS</p>
+
+            <h1>Flor</h1>
+
+            <div class="separador-floral" aria-hidden="true">✦</div>
+
+            <p class="fecha">19 · 12 · 2026</p>
+
+            <button class="btn-abrir" id="btnAbrir" type="button">
+                Abrir invitación
+            </button>
+
+        </div>
+
+    </main>
+
+    <!-- Invitación -->
+    <section class="invitacion" id="invitacion">
+
+        <div class="invitacion-contenido">
+
+            <!-- Bienvenida -->
+            <section class="seccion bienvenida-seccion">
+
+                <p class="bienvenida">UNA NOCHE PARA RECORDAR</p>
+
+                <h2>Flor</h2>
+
+                <div class="separador-floral" aria-hidden="true">✦</div>
+
+                <p class="mensaje">
+                    Quiero compartir con vos una de las noches
+                    más importantes de mi vida.
+                </p>
+
+            </section>
+
+            <!-- Contador -->
+            <section class="seccion seccion-contador">
+
+                <p class="titulo-seccion">FALTA MUY POQUITO</p>
+
+                <div class="contador">
+
+                    <div class="tiempo">
+                        <span id="dias">00</span>
+                        <small>DÍAS</small>
+                    </div>
+
+                    <div class="tiempo">
+                        <span id="horas">00</span>
+                        <small>HORAS</small>
+                    </div>
+
+                    <div class="tiempo">
+                        <span id="minutos">00</span>
+                        <small>MINUTOS</small>
+                    </div>
+
+                    <div class="tiempo">
+                        <span id="segundos">00</span>
+                        <small>SEGUNDOS</small>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Evento -->
+            <section class="evento">
+
+                <p class="evento-titulo">TE ESPERO</p>
+
+                <h3>La gran noche</h3>
+
+                <p class="evento-fecha">19 DE DICIEMBRE · 2026</p>
+                <p class="evento-hora">21:00 HS</p>
+                <p class="evento-lugar">Centro de jubilados y pensionados de Torres</p>
+
+                <div class="botones-evento">
+
+                    <a
+                        class="btn-ubicacion"
+                        href="https://maps.app.goo.gl/EymRKZU6c2TRaT3F6"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Ver ubicación
+                    </a>
+
+                    <button class="btn-ubicacion" id="btnAgenda" type="button">
+                        Agendar evento
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- Confirmación -->
+            <section class="seccion tarjeta-info">
+
+                <p class="titulo-seccion">CONFIRMACIÓN</p>
+
+                <h3>¿Podés acompañarme?</h3>
+
+                <p>
+                    Tu presencia será muy importante para mí.
+                    Por favor, confirmá tu asistencia.
+                </p>
+
+                <a
+                    class="btn-ubicacion"
+                    href="https://wa.me/542323446243?text=Hola%20Flor%2C%20confirmo%20mi%20asistencia%20a%20tus%2015%20a%C3%B1os."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Confirmar asistencia
+                </a>
+
+            </section>
+
+            <!-- Dress code -->
+            <section class="seccion tarjeta-info">
+
+                <p class="titulo-seccion">DRESS CODE</p>
+
+                <h3>Elegante sport</h3>
+
+                <p>
+                    Elegí un look elegante y cómodo para disfrutar
+                    toda la noche.
+                </p>
+
+            </section>
+
+            <!-- Regalos -->
+            <section class="seccion tarjeta-info">
+
+                <p class="titulo-seccion">REGALOS</p>
+
+                <h3>El mejor regalo es que estés</h3>
+
+                <p>
+                    Si además querés hacerme un regalo, podés hacerlo
+                    mediante Mercado Pago.
+                </p>
+
+                <p class="alias-regalo">flor.588</p>
+
+                <button class="btn-ubicacion" id="btnCopiarAlias" type="button">
+                    Copiar alias
+                </button>
+
+            </section>
+
+            <!-- Música sugerida -->
+            <section class="seccion tarjeta-info">
+
+                <p class="titulo-seccion">MÚSICA</p>
+
+                <h3>¡Armemos la fiesta juntos!</h3>
+
+                <p>
+                    ¿Qué canción no puede faltar esa noche?
+                    Mandame tu sugerencia.
+                </p>
+
+                <a
+                    class="btn-ubicacion"
+                    href="https://wa.me/542323446243?text=Hola%20Flor%2C%20quiero%20sugerir%20esta%20canci%C3%B3n%20para%20tus%2015%3A%20"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Sugerir una canción
+                </a>
+
+            </section>
+
+
+            <section class="seccion despedida">
+
+                <div class="separador-floral" aria-hidden="true">✦</div>
+
+                <p>
+                    Gracias por acompañarme en un momento tan especial.
+                </p>
+
+            </section>
+
+        </div>
+
+    </section>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

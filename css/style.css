@@ -1,0 +1,580 @@
+:root {
+    --crema: #fffaf4;
+    --rosa-suave: #f4e4e1;
+    --rosa: #c78e91;
+    --rosa-oscuro: #9b6268;
+    --vino: #5d3238;
+    --texto: #4d3b3d;
+    --texto-suave: #756061;
+    --blanco: #ffffff;
+    --sombra: 0 14px 35px rgba(93, 50, 56, 0.14);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    background: var(--crema);
+    color: var(--texto);
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+button {
+    border: none;
+}
+
+/* PANTALLA PARA ELEGIR MÚSICA */
+
+.pantalla-musica {
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+    overflow: hidden;
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(71, 37, 41, 0.58), rgba(71, 37, 41, 0.58)),
+        url("../assets/img/portada.jpg") center / cover no-repeat;
+}
+
+.pantalla-musica::before,
+.portada::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    pointer-events: none;
+}
+
+.musica-contenido {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 19px;
+    max-width: 600px;
+    color: var(--blanco);
+    animation: aparecer 0.8s ease both;
+}
+
+.musica-contenido h1,
+.portada h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(82px, 15vw, 150px);
+    font-weight: 400;
+    line-height: 0.9;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.pregunta-musica {
+    margin-top: 12px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(21px, 4vw, 30px);
+}
+
+.opciones-musica {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn-musica,
+.btn-abrir,
+.btn-ubicacion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn-musica {
+    min-width: 155px;
+    padding: 14px 23px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background: transparent;
+    color: var(--blanco);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-si-musica {
+    background: var(--blanco);
+    color: var(--vino);
+}
+
+.btn-musica:hover,
+.btn-abrir:hover {
+    background: var(--blanco);
+    color: var(--vino);
+    transform: translateY(-3px);
+    box-shadow: 0 9px 22px rgba(0, 0, 0, 0.2);
+}
+
+/* PORTADA */
+
+.portada {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100svh;
+    padding: 35px 25px;
+    overflow: hidden;
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(71, 37, 41, 0.42), rgba(71, 37, 41, 0.42)),
+        url("../assets/img/portada.jpg") center / cover no-repeat;
+}
+
+.portada::after {
+    content: "✿  ❀  ✿";
+    position: absolute;
+    bottom: 38px;
+    left: 50%;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+    letter-spacing: 14px;
+    transform: translateX(-50%);
+}
+
+.portada-contenido {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+    max-width: 650px;
+    color: var(--blanco);
+    animation: aparecer 1.1s ease both;
+}
+
+.texto-superior,
+.titulo-seccion,
+.bienvenida,
+.evento-titulo {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.texto-superior {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.separador-floral {
+    color: var(--rosa);
+    font-size: 22px;
+    letter-spacing: 10px;
+}
+
+.portada .separador-floral,
+.musica-contenido .separador-floral {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.fecha {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+.btn-abrir {
+    margin-top: 12px;
+    padding: 15px 34px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background: transparent;
+    color: var(--blanco);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* INVITACIÓN */
+
+.invitacion {
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100svh;
+    padding: 100px 25px;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at top left, #f8e5e3 0%, transparent 28%),
+        radial-gradient(circle at bottom right, #f3dedc 0%, transparent 28%),
+        var(--crema);
+}
+
+.invitacion-contenido {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    animation: aparecer 0.8s ease both;
+}
+
+.seccion {
+    width: 100%;
+}
+
+.bienvenida,
+.titulo-seccion,
+.evento-titulo {
+    color: var(--rosa-oscuro);
+}
+
+.invitacion h2 {
+    margin: 20px 0 14px;
+    color: var(--vino);
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(80px, 13vw, 130px);
+    font-weight: 400;
+    line-height: 0.9;
+}
+
+.mensaje {
+    max-width: 560px;
+    margin: 22px auto 0;
+    color: var(--texto-suave);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* CONTADOR */
+
+.seccion-contador {
+    margin-top: 80px;
+    padding: 45px 25px;
+    border-top: 1px solid rgba(199, 142, 145, 0.45);
+    border-bottom: 1px solid rgba(199, 142, 145, 0.45);
+}
+
+.contador {
+    display: flex;
+    justify-content: center;
+    gap: clamp(16px, 5vw, 48px);
+    margin-top: 30px;
+}
+
+.tiempo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 64px;
+}
+
+.tiempo span {
+    color: var(--vino);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(31px, 5vw, 48px);
+}
+
+.tiempo small {
+    margin-top: 7px;
+    color: var(--rosa-oscuro);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* EVENTO Y TARJETAS */
+
+.evento,
+.tarjeta-info {
+    max-width: 700px;
+    margin: 80px auto 0;
+    padding: 54px 30px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: var(--sombra);
+        border-radius: 15px;
+}
+
+.evento h3,
+.tarjeta-info h3,
+.galeria h3 {
+    margin-top: 14px;
+    color: var(--vino);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(29px, 5vw, 42px);
+    font-weight: 400;
+}
+
+
+
+.evento-fecha {
+    margin-top: 27px;
+    color: var(--vino);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+
+.evento-hora,
+.evento-lugar,
+.tarjeta-info p {
+    margin-top: 11px;
+    color: var(--texto-suave);
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.botones-evento {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-ubicacion {
+    margin-top: 30px;
+    padding: 13px 29px;
+    border: 1px solid var(--rosa-oscuro);
+    background: transparent;
+    color: var(--vino);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.botones-evento .btn-ubicacion {
+    margin-top: 30px;
+}
+
+.btn-ubicacion:hover {
+    background: var(--vino);
+    color: var(--blanco);
+    transform: translateY(-3px);
+    box-shadow: 0 9px 20px rgba(93, 50, 56, 0.18);
+}
+
+.tarjeta-info {
+    margin-top: 32px;
+}
+
+.tarjeta-info h3 {
+    margin-bottom: 14px;
+}
+
+
+/* CIERRE Y MODAL */
+
+.despedida {
+    max-width: 550px;
+    margin: 95px auto 0;
+    color: var(--texto-suave);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.despedida .separador-floral {
+    margin-bottom: 20px;
+}
+
+.modal {
+    position: fixed;
+    z-index: 110;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: rgba(42, 22, 25, 0.92);
+}
+
+.modal-contenido {
+    display: block;
+    max-width: min(900px, 100%);
+    max-height: 85svh;
+    border-radius: 3px;
+    object-fit: contain;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    background: transparent;
+    color: var(--blanco);
+    cursor: pointer;
+    font-size: 40px;
+}
+
+/* ANIMACIÓN */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 480px) {
+    .pantalla-musica,
+    .portada {
+        padding: 25px 16px;
+    }
+
+    .pantalla-musica::before,
+    .portada::before {
+        inset: 10px;
+    }
+
+    .musica-contenido h1,
+    .portada h1 {
+        font-size: clamp(75px, 23vw, 100px);
+    }
+
+    .pregunta-musica {
+        font-size: 22px;
+    }
+
+    .opciones-musica {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-musica {
+        width: 100%;
+    }
+    
+    .portada::after {
+        bottom: 22px;
+        font-size: 17px;
+        letter-spacing: 8px;
+    }
+
+    .texto-superior,
+    .bienvenida,
+    .titulo-seccion,
+    .evento-titulo {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .invitacion {
+        padding: 70px 16px;
+    }
+
+    .invitacion h2 {
+        font-size: clamp(70px, 21vw, 92px);
+    }
+
+    .mensaje {
+        font-size: 15px;
+    }
+
+    .seccion-contador {
+        margin-top: 60px;
+        padding: 35px 8px;
+    }
+
+    .contador {
+        gap: 8px;
+    }
+
+    .tiempo {
+        min-width: 48px;
+    }
+
+    .tiempo span {
+        font-size: 27px;
+    }
+
+    .tiempo small {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .evento,
+    .tarjeta-info {
+        margin-top: 55px;
+        padding: 42px 16px;
+    }
+
+    .tarjeta-info {
+        margin-top: 24px;
+    }
+
+    .evento h3,
+    .tarjeta-info h3,
+    .galeria h3 {
+        font-size: 29px;
+    }
+
+    .evento-fecha {
+        font-size: 18px;
+    }
+
+    .botones-evento {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botones-evento .btn-ubicacion {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .despedida {
+        margin-top: 72px;
+        font-size: 18px;
+    }
+}
+
+/* TABLETS */
+
+@media (min-width: 481px) and (max-width: 900px) {
+    .invitacion {
+        padding: 90px 40px;
+    }
+}
