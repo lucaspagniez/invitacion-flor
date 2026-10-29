@@ -1,13 +1,13 @@
 :root {
-    --crema: #fffaf4;
-    --rosa-suave: #f4e4e1;
-    --rosa: #c78e91;
-    --rosa-oscuro: #9b6268;
-    --vino: #5d3238;
-    --texto: #4d3b3d;
-    --texto-suave: #756061;
+    --crema: #f5f5f5;
+    --rosa-suave: #eeeeee;
+    --rosa: #161616;
+    --rosa-oscuro: #000000;
+    --vino: #000000;
+    --texto: #000000;
+    --texto-suave: #000000;
     --blanco: #ffffff;
-    --sombra: 0 14px 35px rgba(93, 50, 56, 0.14);
+    --sombra: 0 14px 35px rgba(17, 17, 17, 0.14);
 }
 
 * {
@@ -50,10 +50,11 @@ button {
     padding: 30px;
     overflow: hidden;
     text-align: center;
-
     background:
-        linear-gradient(rgba(71, 37, 41, 0.58), rgba(71, 37, 41, 0.58)),
+        linear-gradient(rgba(190, 190, 190, 0.58), rgba(77, 77, 77, 0.58)),
         url("../assets/img/portada.jpg") center / cover no-repeat;
+            background-color: rgb(80, 80, 80);
+
 }
 
 .pantalla-musica::before,
@@ -73,8 +74,9 @@ button {
     align-items: center;
     gap: 19px;
     max-width: 600px;
-    color: var(--blanco);
+    color: var(--texto);
     animation: aparecer 0.8s ease both;
+
 }
 
 .musica-contenido h1,
@@ -84,6 +86,8 @@ button {
     font-weight: 400;
     line-height: 0.9;
     text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+    color: rgb(216, 216, 216);
+    text-shadow: 0px 0px 10px rgb(158, 158, 158);
 }
 
 .pregunta-musica {
@@ -157,7 +161,7 @@ button {
     text-align: center;
 
     background:
-        linear-gradient(rgba(71, 37, 41, 0.42), rgba(71, 37, 41, 0.42)),
+        linear-gradient(rgb(143, 143, 143), rgb(202, 202, 202)),
         url("../assets/img/portada.jpg") center / cover no-repeat;
 }
 
@@ -166,10 +170,11 @@ button {
     position: absolute;
     bottom: 38px;
     left: 50%;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.8);
     font-size: 24px;
     letter-spacing: 14px;
     transform: translateX(-50%);
+
 }
 
 .portada-contenido {
@@ -197,18 +202,22 @@ button {
 }
 
 .texto-superior {
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(0, 0, 0, 0.95);
+    padding: 6px 18px;
+    border-radius: 50px; 
+    margin-bottom: 12px;   
 }
 
 .separador-floral {
-    color: var(--rosa);
+    color: black;
     font-size: 22px;
     letter-spacing: 10px;
 }
 
 .portada .separador-floral,
-.musica-contenido .separador-floral {
-    color: rgba(255, 255, 255, 0.95);
+.musica-contenido, .separador-floral,
+.fecha, btn-abrir {
+    color:black;
 }
 
 .fecha {
@@ -220,14 +229,17 @@ button {
 .btn-abrir {
     margin-top: 12px;
     padding: 15px 34px;
-    border: 1px solid rgba(255, 255, 255, 0.9);
+    border: 1px solid black;
     background: transparent;
-    color: var(--blanco);
+    color: black;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
+    
 }
+
+
 
 /* INVITACIÓN */
 
@@ -241,8 +253,8 @@ button {
     text-align: center;
 
     background:
-        radial-gradient(circle at top left, #f8e5e3 0%, transparent 28%),
-        radial-gradient(circle at bottom right, #f3dedc 0%, transparent 28%),
+        radial-gradient(circle at top, #dadada 0%, transparent 28%),
+        radial-gradient(circle at bottom, #dadada 0%, transparent 28%),
         var(--crema);
 }
 
@@ -260,7 +272,7 @@ button {
 .bienvenida,
 .titulo-seccion,
 .evento-titulo {
-    color: var(--rosa-oscuro);
+    color: var(--texto);
 }
 
 .invitacion h2 {
@@ -285,8 +297,8 @@ button {
 .seccion-contador {
     margin-top: 80px;
     padding: 45px 25px;
-    border-top: 1px solid rgba(199, 142, 145, 0.45);
-    border-bottom: 1px solid rgba(199, 142, 145, 0.45);
+    border-top: 1px solid rgb(126, 123, 123);
+    border-bottom: 1px solid rgb(126, 123, 123);
 }
 
 .contador {
@@ -421,7 +433,7 @@ button {
     align-items: center;
     justify-content: center;
     padding: 25px;
-    background: rgba(42, 22, 25, 0.92);
+    background: rgba(43, 42, 42, 0.92);
 }
 
 .modal-contenido {
